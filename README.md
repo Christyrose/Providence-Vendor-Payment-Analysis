@@ -141,8 +141,8 @@ The following visualisations summarise the major findings of the analysis.
 
 ### 1. Payment Amount Distribution
 
-![Payment Amount Distribution](<img width="939" height="308" alt="image" src="https://github.com/user-attachments/assets/446139ef-bf64-44d4-b75d-75cac3ccfcf7" />
-)
+<img width="939" height="308" alt="image" src="https://github.com/user-attachments/assets/446139ef-bf64-44d4-b75d-75cac3ccfcf7" />
+
 
 The distribution is strongly right-skewed, with most positive payments concentrated at lower values and a small number of large payments extending the upper tail.
 
