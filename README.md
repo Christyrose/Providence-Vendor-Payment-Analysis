@@ -148,50 +148,50 @@ The distribution is strongly right-skewed, with most positive payments concentra
 
 ### 2. Payment Method Analysis
 
-![Payment Method Analysis](<img width="938" height="975" alt="image" src="https://github.com/user-attachments/assets/3eb329fc-d163-4a28-af55-4da0561b0ce3" />
-)
+<img width="938" height="975" alt="image" src="https://github.com/user-attachments/assets/3eb329fc-d163-4a28-af55-4da0561b0ce3" />
+
 
 System checks account for the majority of both transaction volume and net recorded payment value, while e-payables represent a smaller share.
 
 ### 3. Annual Spending Trends
 
-![Annual Spending Trends](<img width="939" height="466" alt="image" src="https://github.com/user-attachments/assets/3b0f7a0e-43ba-47c8-b550-f91d5c01ec72" />
-)
+<img width="939" height="466" alt="image" src="https://github.com/user-attachments/assets/3b0f7a0e-43ba-47c8-b550-f91d5c01ec72" />
+
 
 Recorded payment totals generally increased from 2017 to 2025, with notable declines in 2020 and 2024.
 
 ### 4. Monthly Spending Trends
 
-![Monthly Spending Trends](<img width="938" height="509" alt="image" src="https://github.com/user-attachments/assets/008c0490-b638-4da5-ac2e-37fbece413b4" />
-)
+<img width="938" height="509" alt="image" src="https://github.com/user-attachments/assets/008c0490-b638-4da5-ac2e-37fbece413b4" />
+
 
 Monthly payment values fluctuate over time, revealing periods of higher and lower recorded expenditure rather than a uniform spending pattern.
 
 ### 5. Vendor Concentration
 
-![Top 10 Vendors by Payment Amount](<img width="938" height="506" alt="image" src="https://github.com/user-attachments/assets/6fbe7715-0b51-4285-91f6-b67267fd5c14" />
-)
+<img width="938" height="506" alt="image" src="https://github.com/user-attachments/assets/6fbe7715-0b51-4285-91f6-b67267fd5c14" />
+
 
 The top 10 vendors account for approximately 36.75% of net recorded payment value, highlighting the concentration of recorded expenditure among major vendors.
 
 ### 6. Programme Expenditure
 
-![Top Programmes by Payment Amount](<img width="936" height="461" alt="image" src="https://github.com/user-attachments/assets/32094814-a7f2-48c4-9523-286c452517f3" />
-)
+<img width="936" height="461" alt="image" src="https://github.com/user-attachments/assets/32094814-a7f2-48c4-9523-286c452517f3" />
+
 
 Regular Elementary/Secondary Education Programs has the highest recorded payment total among the programmes analysed, followed by Special Education and G&A Services.
 
 ### 7. Negative Payments and Outliers
 
-![Negative Payments and Outliers](<img width="938" height="622" alt="image" src="https://github.com/user-attachments/assets/2c303e33-cd7d-43d5-849f-939747b10fd1" />
-)
+<img width="938" height="622" alt="image" src="https://github.com/user-attachments/assets/2c303e33-cd7d-43d5-849f-939747b10fd1" />
+
 
 Negative payment amounts and statistically extreme values require contextual interpretation. Their presence alone does not establish an error or irregularity.
 
 ### 8. December 2018 Transaction Concentration
 
-![December 2018 Transaction Concentration](<img width="1032" height="422" alt="image" src="https://github.com/user-attachments/assets/bff56b32-8856-4098-a758-6fd079f9a02b" />
-)
+<img width="1032" height="422" alt="image" src="https://github.com/user-attachments/assets/bff56b32-8856-4098-a758-6fd079f9a02b" />
+
 
 A single date accounts for approximately 87.3% of recorded December 2018 transactions. This unusual concentration should be investigated and validated against the original source records.
 
