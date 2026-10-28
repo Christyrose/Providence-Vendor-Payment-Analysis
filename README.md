@@ -1,155 +1,220 @@
 # Providence Vendor Payment Analysis
 
-### Python-Powered Financial Data Analytics
+### Exploratory Data Analysis of Public Expenditure Data
 
-A comprehensive Python-based data analytics project analysing public expenditure records to understand payment distributions, vendor concentration, spending trends, and unusual transaction patterns through data preparation, statistical analysis, and visualisation.
+A Python-based data analytics project exploring municipal expenditure records published by the City of Providence. This project examines payment distributions, payment methods, spending trends, vendor concentration, expenditure programmes, and unusual transaction patterns to derive meaningful insights from public financial data.
 
-**Author:** Christy Rose
+## Project Overview
 
-**Tools & Technologies:** Python · Pandas · NumPy · Matplotlib · Seaborn · Plotly · Google Colab
+Public expenditure datasets contain large volumes of transactions across vendors, departments, programmes, funding sources, and payment methods. Analysing these records can help reveal how payments are distributed, identify major expenditure areas, and highlight patterns that may require further investigation.
 
----
+This project applies data cleaning, exploratory data analysis (EDA), descriptive statistics, and data visualisation to the City of Providence Expenditures dataset.
 
-## 📌 Project Overview
+The analysis focuses on understanding recorded payment activity and identifying unusual patterns without assuming that outliers or anomalies indicate errors or wrongdoing.
 
-Public expenditure datasets contain large volumes of transactions across vendors, departments, expenditure programmes, funding sources, and payment methods. Analysing these records can help identify spending patterns, understand payment distributions, and highlight areas that may require further investigation.
+## Project Objectives
 
-This project analyses the **City of Providence Expenditures** dataset using Python, data cleaning, exploratory data analysis (EDA), descriptive statistics, and visualisation.
+- Inspect the structure, data types, and quality of the expenditure dataset.
+- Clean the data by handling duplicates, missing descriptions, and date fields.
+- Analyse payment amount distributions using descriptive statistics.
+- Compare transaction counts and payment values across payment methods.
+- Examine annual and monthly payment trends.
+- Identify leading vendors, departments, expense accounts, funding sources, and programmes by payment value.
+- Investigate negative payments, extreme values, and unusual transaction patterns.
+- Communicate findings through clear, evidence-based visualisations.
 
-The project focuses on understanding recorded payment behaviour and identifying unusual patterns while distinguishing statistical observations from conclusions that require further evidence.
-
-## 🎯 Project Objectives
-
-- Inspect the structure and quality of public expenditure data.
-- Clean selected fields and prepare payment amounts and dates for analysis.
-- Identify and remove confirmed exact duplicate records.
-- Analyse payment amount distributions and statistical outliers.
-- Compare payment methods using transaction counts and recorded payment values.
-- Examine annual and monthly expenditure patterns.
-- Identify leading vendors and expenditure programmes.
-- Investigate negative payments, large transactions, and unusual date concentrations.
-- Communicate findings through visualisations and evidence-based recommendations.
-
-## 📂 Dataset
+## Dataset
 
 **Dataset:** City of Providence Expenditures
 
-**Source:** City of Providence, published through Data.gov.
+**Source:** City of Providence via Data.gov
 
-**Official dataset:** [City of Providence Expenditures — Data.gov](https://catalog.data.gov/dataset/city-of-providence-expenditures)
+**Source link:** https://catalog.data.gov/dataset/city-of-providence-expenditures
 
-The source dataset contains 17 original columns, including:
+The dataset contains public expenditure transaction records, including fields related to payment dates, payment amounts, vendors, departments, programmes, expense accounts, funding sources, entry types, payment methods, and payment status.
 
-- Payment Date
-- Payment Amount
-- Vendor/Payee
-- Payment Method
-- Invoice Description
-- Department and Programme Accounts
-- Funding Source Account
-- Payment Status and Invoice ID
+### Dataset Summary
 
-The project report records **370,944 rows and 20 columns** in the cleaned dataset, including derived year and month fields. These figures should be confirmed by running the final notebook from beginning to end.
+| Metric | Value |
+|---|---:|
+| Original records | 370,959 |
+| Records after deduplication | 370,944 |
+| Original columns | 17 |
+| Columns in the cleaned dataset | 20 |
+| Exact duplicate records removed | 15 |
+| Exact duplicates remaining after cleaning | 0 |
 
+The cleaned dataset includes additional date-related fields used for time-based analysis.
 
-## 🛠️ Tools and Technologies
+## Tools and Technologies
 
-| Tool | Purpose |
-|---|---|
-| Python | Data preparation and analysis |
-| Pandas | Data cleaning, grouping, and tabular analysis |
-| NumPy | Numerical operations and calculations |
-| Matplotlib | Static charts and visualisations |
-| Seaborn | Statistical visualisations |
-| Plotly | Interactive visualisations, where used |
-| Google Colab | Notebook development and execution |
+- **Python** — Data analysis and transformation
+- **Pandas** — Data cleaning, manipulation, and aggregation
+- **NumPy** — Numerical computations
+- **Matplotlib** — Data visualisation
+- **Seaborn** — Statistical visualisation
+- **Plotly** — Interactive visualisation, where applicable
+- **Google Colab** — Notebook development and execution
 
-## 🔄 Project Workflow
+## Methodology
 
-1. **Data loading and inspection** — examined the dataset's dimensions, column names, data types, descriptive statistics, and missing values.
-2. **Data cleaning** — prepared payment amounts, parsed dates, standardised selected categories, and investigated exact duplicates.
-3. **Feature engineering** — derived payment year and month fields for time-based analysis.
-4. **Exploratory data analysis** — examined payment distributions, payment methods, trends, vendors, programmes, and negative values.
-5. **Statistical analysis** — used descriptive statistics and IQR-based outlier detection to identify unusual observations for review.
-6. **Visualisation** — used charts to communicate important patterns and comparisons.
-7. **Interpretation and recommendations** — documented findings, limitations, and areas requiring further validation.
+### 1. Data Loading and Inspection
 
+Loaded the expenditure dataset into a Pandas DataFrame and examined its structure, column names, data types, record count, descriptive statistics, and missing values.
 
-## 📈 Visualisations and Key findings
-### Distribution of Positive Payment Amounts
-<img width="939" height="308" alt="image" src="https://github.com/user-attachments/assets/72fb5d2c-9861-4252-8475-e080b39b195a" />
-The distribution is strongly right-skewed: most positive payments are relatively small, while a few very large payments create a long right tail.
+### 2. Data Cleaning
 
-### Spread of Positive Payment Amounts
-<img width="938" height="976" alt="image" src="https://github.com/user-attachments/assets/1cd041d6-482a-454d-9b9c-986aaf7e7f59" />
+- Identified and removed 15 exact duplicate records.
+- Converted relevant date fields into appropriate date formats.
+- Prepared payment amount fields for numerical analysis.
+- Added date-related features to support monthly and annual analysis.
+- Used `"Unknown"` as a transparent label for missing invoice descriptions rather than inferring unavailable information.
+- Retained negative payment amounts and extreme values for further analysis.
 
-<img width="938" height="517" alt="image" src="https://github.com/user-attachments/assets/8d431d25-65d1-44a0-be98-c6bcd40821e3" />
-<img width="936" height="582" alt="image" src="https://github.com/user-attachments/assets/4d162f40-7cc9-4164-b388-a1a5f10b4e75" />
-<img width="939" height="466" alt="image" src="https://github.com/user-attachments/assets/826db086-41ab-44ae-8819-917e07db6b5f" />
-<img width="938" height="506" alt="image" src="https://github.com/user-attachments/assets/40194843-dbe3-4460-80ee-157cd591db70" />
-<img width="938" height="464" alt="image" src="https://github.com/user-attachments/assets/972e3edc-d90f-4a9a-a5c9-03c7676b896f" />
-<img width="939" height="398" alt="image" src="https://github.com/user-attachments/assets/6633aeae-cb11-4d0a-ac3a-d59fa2941183" />
-<img width="940" height="444" alt="image" src="https://github.com/user-attachments/assets/af8d8a67-fe92-4995-bd17-082ef778cfb0" />
-<img width="938" height="559" alt="image" src="https://github.com/user-attachments/assets/cc195cdd-77fd-4a54-af3d-0f2a285444cb" />
-<img width="938" height="509" alt="image" src="https://github.com/user-attachments/assets/87fee766-aca1-40fd-9b6f-5b9d9cf94183" />
-<img width="938" height="463" alt="image" src="https://github.com/user-attachments/assets/c09a5605-4001-4d6a-ba25-4061eecfa1d5" />
-<img width="938" height="463" alt="image" src="https://github.com/user-attachments/assets/d7d3b14a-9504-40c7-bbe8-34ee6fff00eb" />
-<img width="936" height="461" alt="image" src="https://github.com/user-attachments/assets/a1d76ee6-0a61-4681-8079-ca1e13b88c3a" />
-<img width="938" height="622" alt="image" src="https://github.com/user-attachments/assets/5789b556-02c0-40cb-8d96-189302877ea6" />
-<img width="938" height="422" alt="image" src="https://github.com/user-attachments/assets/4357a36c-b598-4668-8f8c-140b76383294" />
-<img width="938" height="622" alt="image" src="https://github.com/user-attachments/assets/19062391-a713-4e04-883c-bdbe66a5b8ea" />
-<img width="940" height="566" alt="image" src="https://github.com/user-attachments/assets/6eb84e33-effe-4421-b2c2-95d0be69dd0d" />
-<img width="938" height="422" alt="image" src="https://github.com/user-attachments/assets/f3b66381-e1a6-474e-98ed-35a0f3b4cd3a" />
+### 3. Exploratory Data Analysis
 
+Analysed payment distributions, summary statistics, payment methods, entry types, monthly and annual trends, vendor concentration, and expenditure categories.
 
+### 4. Outlier and Anomaly Investigation
 
+Used the Interquartile Range (IQR) method to identify statistically unusual payment amounts. Examined unusual transaction patterns and date concentrations to identify areas requiring additional validation.
 
+Outliers were retained because statistical extremity alone does not establish that a transaction is incorrect.
 
+### 5. Data Visualisation
 
+Used charts to communicate distributions, comparisons, trends, concentration patterns, and unusual observations in a clear and interpretable format.
 
+## Key Findings
 
+### 1. Payment Amount Distribution
 
+- Mean payment amount: approximately **$6,725.57**.
+- Median payment amount: approximately **$364.65**.
+- Skewness: approximately **36.14**.
 
-## 💡 Recommendations
+The mean is substantially higher than the median, and the distribution is strongly right-skewed. This indicates that a relatively small number of large recorded payments strongly influence the average.
 
-- Re-run the complete notebook to verify row counts, duplicate counts, date parsing, and reported statistics.
-- Review unusually large positive payments against supporting source records before classifying them as errors.
-- Analyse negative payments separately to investigate possible reversals, refunds, or adjustments.
-- Distinguish gross positive payment totals from net recorded payment totals where relevant.
-- Clearly label incomplete years when comparing annual spending.
-- Report missing invoice descriptions transparently; placeholder values such as `Unknown` do not recover the original information.
-- Ensure that notebook outputs and any interactive dashboard use consistent definitions and totals.
+### 2. Payment Method Analysis
 
-## ⚠️ Limitations
+System checks account for:
 
-- The analysis is based on published expenditure records and cannot independently verify the business purpose or validity of each payment.
-- Missing invoice descriptions limit the interpretation of some transactions.
-- The meaning of negative amounts cannot be confirmed from the sign alone.
-- Partial years may distort year-to-year comparisons.
-- IQR-based outlier detection identifies statistically unusual values but does not prove fraud or incorrect payment.
-- Reported figures must be checked against a fresh, complete execution of the final notebook.
+- **88.52%** of recorded transactions.
+- **95.99%** of net recorded payment value.
 
+E-payables account for the remaining 11.48% of transactions and 4.01% of net recorded payment value. System checks therefore dominate both transaction volume and recorded value.
 
-## ▶️ How to Run the Project
+### 3. Annual Payment Trends
 
-1. Open the notebook in the `notebooks/` folder.
-2. Download the source dataset from the official [Data.gov dataset page](https://catalog.data.gov/dataset/city-of-providence-expenditures).
-3. Upload the CSV to your Google Colab session or configure the notebook to read it from your own storage.
-4. Install any required libraries that are not already available.
-5. Run the notebook cells in order, from data loading through analysis and visualisation.
-6. Compare the final outputs with the figures documented in this README.
+Recorded payment totals generally increased between 2017 and 2025, although the trend was not continuous.
 
-## 📚 References
+- Recorded payments decreased by **10.46% in 2020** compared with 2019.
+- Recorded payments decreased by **1.51% in 2024** compared with 2023.
 
-- [City of Providence Expenditures — Data.gov](https://catalog.data.gov/dataset/city-of-providence-expenditures)
-- [Pandas Documentation](https://pandas.pydata.org/docs/)
-- [NumPy Documentation](https://numpy.org/doc/)
-- [Matplotlib Documentation](https://matplotlib.org/stable/)
-- [Seaborn Documentation](https://seaborn.pydata.org/)
-- [Plotly Python Documentation](https://plotly.com/python/)
+These changes identify periods for further analysis but do not, by themselves, explain the reasons behind the declines.
 
-## 👩‍💻 Author
+### 4. Vendor Concentration
+
+The top 10 vendors account for approximately **36.75% of net recorded payment value**.
+
+This indicates a substantial concentration of recorded expenditure among a limited group of vendors. Vendor concentration should be interpreted alongside contract details, services provided, and supporting records.
+
+### 5. Programme Expenditure
+
+Regular Elementary/Secondary Education Programs represents the largest recorded payment total among the programmes examined, followed by Special Education and G&A Services.
+
+This highlights the importance of programme-level analysis when understanding how public expenditure is distributed.
+
+### 6. Unusual Transaction Concentration
+
+An unusual concentration was observed in December 2018:
+
+- Total December 2018 transactions: **14,066**
+- Transactions recorded on 21 December 2018: **12,277**
+- Share of December transactions recorded on that day: **87.3%**
+
+This concentration warrants validation against the original records, payment dates, and possible batch-processing activity. The pattern alone does not establish its cause.
+
+## Visualisations
+
+The following visualisations summarise the major findings of the analysis.
+
+### 1. Payment Amount Distribution
+
+![Payment Amount Distribution](images/payment-amount-distribution.png)
+
+The distribution is strongly right-skewed, with most positive payments concentrated at lower values and a small number of large payments extending the upper tail.
+
+### 2. Payment Method Analysis
+
+![Payment Method Analysis](images/payment-method-analysis.png)
+
+System checks account for the majority of both transaction volume and net recorded payment value, while e-payables represent a smaller share.
+
+### 3. Annual Spending Trends
+
+![Annual Spending Trends](images/annual-spending-trends.png)
+
+Recorded payment totals generally increased from 2017 to 2025, with notable declines in 2020 and 2024.
+
+### 4. Monthly Spending Trends
+
+![Monthly Spending Trends](images/monthly-spending-trends.png)
+
+Monthly payment values fluctuate over time, revealing periods of higher and lower recorded expenditure rather than a uniform spending pattern.
+
+### 5. Vendor Concentration
+
+![Top 10 Vendors by Payment Amount](images/vendor-concentration.png)
+
+The top 10 vendors account for approximately 36.75% of net recorded payment value, highlighting the concentration of recorded expenditure among major vendors.
+
+### 6. Programme Expenditure
+
+![Top Programmes by Payment Amount](images/programme-expenditure.png)
+
+Regular Elementary/Secondary Education Programs has the highest recorded payment total among the programmes analysed, followed by Special Education and G&A Services.
+
+### 7. Negative Payments and Outliers
+
+![Negative Payments and Outliers](images/negative-payments-outliers.png)
+
+Negative payment amounts and statistically extreme values require contextual interpretation. Their presence alone does not establish an error or irregularity.
+
+### 8. December 2018 Transaction Concentration
+
+![December 2018 Transaction Concentration](images/december-2018-transaction-concentration.png)
+
+A single date accounts for approximately 87.3% of recorded December 2018 transactions. This unusual concentration should be investigated and validated against the original source records.
+
+## Limitations
+
+- Missing invoice descriptions cannot be reliably reconstructed from the available fields.
+- Extreme values may represent legitimate transactions and were not automatically removed.
+- Negative payment amounts cannot be assigned a definitive meaning based on their values alone.
+- Unusual transaction concentrations require additional source validation and contextual information.
+- The dataset describes recorded expenditure but does not independently establish the reasons for spending patterns or changes over time.
+- Findings reflect the dataset and analysis performed; they should be reconfirmed against a fresh execution of the final notebook.
+
+## Conclusion
+
+This project demonstrates how Python-based data analytics can be applied to public expenditure records to understand payment distributions, compare payment methods, analyse spending trends, and identify areas requiring further investigation.
+
+The analysis highlights the influence of large payments on average values, the concentration of recorded expenditure among major vendors, changes in annual payment totals, and an unusual transaction concentration in December 2018.
+
+By combining data cleaning, descriptive statistics, exploratory analysis, and visualisation, the project turns a large transactional dataset into structured findings that can support further investigation and more informed analysis of public financial data.
+
+## Repository Contents
+
+- **Jupyter Notebook:** Data cleaning, exploratory analysis, calculations, and visualisations.
+- **README.md:** Project overview, methodology, key findings, and visual summaries.
+
+## Author
 
 **Christy Rose**
 
-This project demonstrates a practical application of Python-based data cleaning, exploratory analysis, statistical reasoning, and visual communication using publicly available expenditure data.
+Data Analytics | Python | Pandas | NumPy | Data Visualisation
+
+---
+
+**Data Source:** [City of Providence Expenditures — Data.gov](https://catalog.data.gov/dataset/city-of-providence-expenditures)
